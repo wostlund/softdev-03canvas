@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HW#3 Canvas</title>
+  </heaD>
+  <body>
+    <canvas height="750" width="750" id="a" style="border:2px solid black;">
+    </canvas>
+    <button id="clear" name="clear">Clear!</button>
+    <script>
+      var canvas = document.getElementById("a");
+      var content = canvas.getContext("2d");
+      
+
+      function createBox(x, y, w, h){
+        content.fillStyle = "goldenrod";
+        content.fillRect(x,y,w,h);
+      };
+        
+      canvas.addEventListener('click', function(e){
+        var canvas = document.getElementById("a");
+        var content = canvas.getContext("2d");
+        createBox(event.clientX - 70, event.clientY - 35, 140, 70);
+      }, false);
+
+      var a = document.getElementById("clear");
+      a.addEventListener('click', function(e){
+        var canvas = document.getElementById("a");
+        var content = canvas.getContext("2d");
+        content.clearRect(0, 0, canvas.width, canvas.height);
+      });
+    </script>
+  </body>
+</html>
